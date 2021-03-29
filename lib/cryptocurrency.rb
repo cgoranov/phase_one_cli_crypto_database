@@ -12,7 +12,7 @@ class CryptoCurrency
         end
 
         self.save
-
+        
     end
 
     def save
