@@ -3,3 +3,7 @@
 require_relative '../enviornment.rb'
 
 GetCryptoCurrency.get_currency
+
+CryptoCurrency.all
+
+binding.pry

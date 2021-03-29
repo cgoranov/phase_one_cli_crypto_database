@@ -8,7 +8,6 @@ class GetCryptoCurrency
         response = Net::HTTP.get_response(uri)
         currency_array = JSON.parse(response.body)["data"]
         currency_array.each do |currency|
-            binding.pry
             CryptoCurrency.new(currency)
         end
     end
