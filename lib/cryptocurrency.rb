@@ -1,0 +1,6 @@
+
+
+class CryptoCurrency
+
+
+end

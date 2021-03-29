@@ -1,3 +1,5 @@
 #!/usr/bin/env ruby
 
-require_relative './enviornment.rb'
+require_relative '../enviornment.rb'
+
+GetCryptoCurrency.get_currency
