@@ -11,13 +11,10 @@ GEM
       mime-types-data (~> 3.2015)
     mime-types-data (3.2021.0225)
     multi_xml (0.6.0)
-    nokogiri (1.11.2-x86_64-linux)
-      racc (~> 1.4)
     open-uri (0.1.0)
     pry (0.14.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    racc (1.5.2)
     require_all (3.0.0)
 
 PLATFORMS
@@ -26,7 +23,6 @@ PLATFORMS
 DEPENDENCIES
   httparty
   json
-  nokogiri
   open-uri
   pry
   require_all

@@ -6,3 +6,4 @@ GetCryptoCurrency.get_currency
 
 CryptoCurrency.all
 
+# binding.pry
