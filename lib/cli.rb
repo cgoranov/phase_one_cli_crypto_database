@@ -30,12 +30,28 @@ class CLI
         puts "Please enter name (yes case sensitive!) of the currency you would like to see more detail about."
         puts "You can type 'Exit' to exit application"
         user_input
+        if valid_input?(user_input)
+            if user_input == "Yes"
+                crypto_currency_list
+                search
+            else
+                goodbye
+            end
+
+        else
+            "Invalid input"
+            menu
+        end
     
     end
 
     def greeting
         puts "Welcome to Crypto Search!"
         puts "Would you like to see the top 5 largest cryptocurrencies in the world?"
+    end
+
+    def goodbye
+        puts "We are sorry to see you go. Comeback anytime for all your Crypto Data needs!"
     end
 
 
