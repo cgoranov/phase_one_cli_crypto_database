@@ -15,7 +15,7 @@ class CLI
                 crypto_currency_list
                 search
             else
-                puts "We are sorry to see you go. Comeback anytime for all your Crypto Data needs!"
+                goodbye
             end
 
         else
@@ -31,18 +31,30 @@ class CLI
         puts "You can type 'Exit' to exit application"
         user_input
         if valid_input?(user_input)
-            if user_input == "Yes"
-                crypto_currency_list
-                search
-            else
+            if user_input == "Exit"
                 goodbye
+            else
+                currency_deail(user_input)
+                puts " "
+                another_selection?
             end
-
         else
             "Invalid input"
-            menu
+            search
         end
-    
+    end
+
+    def another_selection?
+        puts "would you like to search other currencies? Select Yes or Exit"
+        user_input
+        if user_input == "Yes"
+            search
+        elsif user_input == "Exit"
+            goodbye
+        else
+            "Invalid input."
+            another_selection?
+        end
     end
 
     def greeting
@@ -76,7 +88,7 @@ class CLI
         end
     end
 
-    def currency_deail(currency)
+    def currency_deail(user_input)
         CryptoCurrency.all.each do |x|
             if x.name == user_input
                 puts "Rank:           #{x.rank}"
