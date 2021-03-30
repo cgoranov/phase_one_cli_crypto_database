@@ -2,18 +2,20 @@
 class CLI
 
     def initialize
+        GetCryptoCurrency.get_currency
         search
     end
 
     def search
         greeting
         user_input
+        if
     end
 
     def greeting
         puts "Welcome to Crypto Search!"
         puts "Would you like to see the top 5 largest cryptocurrencies in the world?"
-        puts "Enter 'Yes' to see list or 'Exit' to leave search"
+        puts "Enter 'Yes' to see our list or 'Exit' to leave search"
     end
 
     def user_input
@@ -33,11 +35,11 @@ class CLI
     def show_currency_detail(user_input)
         CryptoCurrency.all.each do |x|
            if x.name == user_input 
-
+              self.currency_deail(x)
         end
     end
 
-    def currency_deail(user_input)
+    def currency_deail(currency)
         CryptoCurrency.all.each do |x|
             if x.name == user_input
                 puts "Rank:           #{x.rank}"
