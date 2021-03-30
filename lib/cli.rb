@@ -46,7 +46,7 @@ class CLI
 
     def another_selection?
         puts " "
-        puts "would you like to search other currencies? Select Yes or Exit"
+        puts "would you like to search other currencies? Select Yes or Exit (input is CASE SENSITIVE)"
         input = user_input
         if input == "Yes"
             search
@@ -88,14 +88,6 @@ class CLI
     def crypto_currency_list
         CryptoCurrency.all.collect do |x|
             puts "#{x.rank}. #{x.name}" if x.rank <= 5
-        end
-    end
-
-    def show_currency_detail(user_input)
-        CryptoCurrency.all.each do |x|
-           if x.name == user_input 
-              self.currency_deail(x)
-           end
         end
     end
 
