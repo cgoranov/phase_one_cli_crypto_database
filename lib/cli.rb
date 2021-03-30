@@ -7,6 +7,7 @@ class CLI
 
     def search
         greeting
+        user_input
     end
 
     def greeting
@@ -19,8 +20,8 @@ class CLI
         input = gets.strip
     end
 
-    def valid_input?
-
+    def valid_input?(user_input)
+        user_input == "Yes" || user_input === "Exit" || CryptoCurrency.all.any? {|x| x.name == user_input}
     end
 
     def crypto_currency_list
