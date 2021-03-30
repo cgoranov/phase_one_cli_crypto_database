@@ -24,9 +24,10 @@ class CLI
     end
 
     def search
+        puts " "
         crypto_currency_list
         puts " "
-        puts "Please enter name (yes case sensitive!) of the currency you would like to see more detail about."
+        puts "Please enter name of the currency you would like to see more detail about. WARNING: yes case sensitive!"
         puts "You can type 'Exit' to exit application"
         input = user_input
         if valid_input?(input)
@@ -44,6 +45,7 @@ class CLI
     end
 
     def another_selection?
+        puts " "
         puts "would you like to search other currencies? Select Yes or Exit"
         input = user_input
         if input == "Yes"
@@ -57,18 +59,22 @@ class CLI
     end
 
     def greeting
+        puts " "
         puts "Welcome to Crypto Search!"
         puts "Would you like to see the top 5 largest cryptocurrencies in the world?"
+        puts " "
     end
 
     def goodbye
         puts " "
         puts "We are sorry to see you go. Comeback anytime for all your Crypto Data needs!"
+        puts " "
     end
 
     def invalid
         puts " "
         puts "Invalid input! Please try again."
+        puts " "
     end
 
     def user_input
@@ -96,6 +102,9 @@ class CLI
     def currency_deail(user_input)
         CryptoCurrency.all.each do |x|
             if x.name == user_input
+                puts " "
+                puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+                puts " "
                 puts "Rank:           #{x.rank}"
                 puts "Name:           #{x.name}"
                 puts "Ticker Symbol:  #{x.symbol}"
@@ -104,6 +113,9 @@ class CLI
                 puts "24 hour change: #{x.percent_change_24h}"
                 puts "1 hour change:  #{x.percent_change_1h}"
                 puts "7 day change:   #{x.percent_change_7d}"
+                puts " "
+                puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
+                puts " "
             end
         end
     end
