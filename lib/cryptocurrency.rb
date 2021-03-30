@@ -9,7 +9,6 @@ class CryptoCurrency
 
         currency_hash.each do |k, v|
             self.send(("#{k}="), v)
-            end
         end
 
         self.save

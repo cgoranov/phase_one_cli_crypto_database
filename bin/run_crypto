@@ -2,11 +2,11 @@
 
 require_relative '../enviornment.rb'
 
-# GetCryptoCurrency.get_currency
+GetCryptoCurrency.get_currency
 
-# CryptoCurrency.all
+CryptoCurrency.all
 
-CLI.crypto_currency_list
+CLI.new.crypto_currency_list
 
 binding.pry
 

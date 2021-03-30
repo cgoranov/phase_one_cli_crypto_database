@@ -2,9 +2,11 @@
 class CLI
 
     def initialize
+        search
     end
 
     def search
+        greeting
     end
 
     def greeting
@@ -18,15 +20,35 @@ class CLI
     end
 
     def valid_input?
+
     end
 
     def crypto_currency_list
-        CryptoCurrency.all.each do |x|
+        CryptoCurrency.all.collect do |x|
             puts "#{x.rank}. #{x.name}" if x.rank <= 5
         end
     end
 
-    def crypto_currency_detail
+    def show_currency_detail(user_input)
+        CryptoCurrency.all.each do |x|
+           if x.name == user_input 
+
+        end
+    end
+
+    def currency_deail(user_input)
+        CryptoCurrency.all.each do |x|
+            if x.name == user_input
+                puts "Rank:           #{x.rank}"
+                puts "Name:           #{x.name}"
+                puts "Ticker Symbol:  #{x.symbol}"
+                puts "Current Price:  #{x.price_usd}"
+                puts "Market Cap:     #{x.market_cap_usd}"
+                puts "24 hour change: #{x.percent_change_24h}"
+                puts "1 hour change:  #{x.percent_change_1h}"
+                puts "7 day change:   #{x.percent_change_7d}"
+            end
+        end
     end
 
 end
