@@ -3,20 +3,30 @@ class CLI
 
     def initialize
         GetCryptoCurrency.get_currency
-        search
+        greeting
+        menu
+    end
+
+    def menu
+        puts "Would you like to see the top 5 largest cryptocurrencies in the world?"
+        puts "Enter 'Yes' to see our list or 'Exit' to leave search"
+        user_input
+        if valid_input?(user_input)
+            if user_input == "Yes"
+                crypto_currency_list
+
+        else
+            "Invalid input"
     end
 
     def search
-        greeting
-        user_input
-        if
+    
     end
 
     def greeting
         puts "Welcome to Crypto Search!"
-        puts "Would you like to see the top 5 largest cryptocurrencies in the world?"
-        puts "Enter 'Yes' to see our list or 'Exit' to leave search"
     end
+
 
     def user_input
         input = gets.strip
