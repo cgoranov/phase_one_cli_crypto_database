@@ -2,24 +2,23 @@
 class CLI
 
     def initialize
-        GetCryptoCurrency.get_currency
         greeting
+        GetCryptoCurrency.get_currency
         menu
     end
 
     def menu
+        puts " "
         puts "Enter 'Yes' to see our list or 'Exit' to leave search"
-        user_input
-        if valid_input?(user_input)
-            if user_input == "Yes"
-                crypto_currency_list
+        input = user_input
+        if valid_input?(input)
+            if input == "Yes"
                 search
             else
                 goodbye
             end
-
         else
-            "Invalid input"
+            invalid
             menu
         end
     end
@@ -29,30 +28,30 @@ class CLI
         puts " "
         puts "Please enter name (yes case sensitive!) of the currency you would like to see more detail about."
         puts "You can type 'Exit' to exit application"
-        user_input
-        if valid_input?(user_input)
-            if user_input == "Exit"
+        input = user_input
+        if valid_input?(input)
+            if input == "Exit"
                 goodbye
             else
-                currency_deail(user_input)
+                currency_deail(input)
                 puts " "
                 another_selection?
             end
         else
-            "Invalid input"
+            invalid
             search
         end
     end
 
     def another_selection?
         puts "would you like to search other currencies? Select Yes or Exit"
-        user_input
-        if user_input == "Yes"
+        input = user_input
+        if input == "Yes"
             search
-        elsif user_input == "Exit"
+        elsif input == "Exit"
             goodbye
         else
-            "Invalid input."
+            invalid
             another_selection?
         end
     end
@@ -63,9 +62,14 @@ class CLI
     end
 
     def goodbye
+        puts " "
         puts "We are sorry to see you go. Comeback anytime for all your Crypto Data needs!"
     end
 
+    def invalid
+        puts " "
+        puts "Invalid input! Please try again."
+    end
 
     def user_input
         input = gets.strip
@@ -85,6 +89,7 @@ class CLI
         CryptoCurrency.all.each do |x|
            if x.name == user_input 
               self.currency_deail(x)
+           end
         end
     end
 
