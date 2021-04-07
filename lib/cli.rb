@@ -121,7 +121,7 @@ class CLI
         if input_array.include?("-")
             input.colorize(:red)
         else
-            input.colorize(:green)
+            "+".colorize(:green) + input.colorize(:green)
         end
     end
         

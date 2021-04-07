@@ -2,8 +2,5 @@
 
 require_relative '../enviornment.rb'
 
-FONT = TTY::Font.new(:starwars)
-PASTEL = Pastel.new
-
 CLI.new
 
