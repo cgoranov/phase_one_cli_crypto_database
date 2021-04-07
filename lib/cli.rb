@@ -113,10 +113,10 @@ class CLI
         end
     end
 
-    # def format_number(input)
-    #     input_integer = input.to_i
-    #     input_integer.to_s.reverse.scan(/.{1,3}/).join(',').reverse
-    # end
+    def format_number(input)
+        input_integer = input.to_i
+        input_integer.to_s.reverse.scan(/.{1,3}/).join(',').reverse
+    end
 
     # def format_change(input)
     #     input_array = input.to_s.split(//)
