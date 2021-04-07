@@ -28,14 +28,12 @@ class CLI
         puts "Please enter name of the currency you would like to see more detail about. WARNING: case sensitive!"
         puts "You can type 'Exit' to exit application."
         input = user_input
-        if valid_input?(input)
-            if input == "Exit"
-                goodbye
-            else
-                currency_deail(input)
-                puts " "
-                another_selection?
-            end
+        if input == "Exit"
+            goodbye
+        elsif CryptoCurrency.all.any? {|x| x.name == input}
+            currency_deail(input)
+            puts " "
+            another_selection?
         else
             invalid
             search
@@ -77,10 +75,6 @@ class CLI
 
     def user_input
         input = gets.strip
-    end
-
-    def valid_input?(user_input)
-        user_input == "Yes" || user_input === "Exit" || CryptoCurrency.all.any? {|x| x.name == user_input}
     end
 
     def crypto_currency_list
@@ -125,5 +119,4 @@ class CLI
         end
     end
         
-
 end
