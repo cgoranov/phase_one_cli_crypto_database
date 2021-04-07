@@ -55,8 +55,11 @@ class CLI
     end
 
     def greeting
+        font = TTY::Font.new(:starwars)
+        pastel = Pastel.new
         puts " "
-        puts "Welcome to" " " "Crypto Search!".colorize(:color => :light_blue)
+        puts "Welcome to" 
+        puts pastel.magenta(font.write("Crypto Search"))
         puts " "
         puts "Would you like to see the top 5 largest cryptocurrencies in the world?"
         puts " "

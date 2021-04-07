@@ -18,10 +18,14 @@ GEM
     mime-types-data (3.2021.0225)
     multi_xml (0.6.0)
     open-uri (0.1.0)
+    pastel (0.8.0)
+      tty-color (~> 0.5)
     pry (0.14.0)
       coderay (~> 1.1)
       method_source (~> 1.0)
     require_all (3.0.0)
+    tty-color (0.6.0)
+    tty-font (0.5.0)
 
 PLATFORMS
   x86_64-linux
@@ -31,8 +35,10 @@ DEPENDENCIES
   httparty
   json
   open-uri
+  pastel
   pry
   require_all
+  tty-font (~> 0.5.0)
 
 BUNDLED WITH
    2.2.11
