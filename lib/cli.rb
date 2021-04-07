@@ -110,15 +110,14 @@ class CLI
     end
 
     def format_number(input)
-        input_decimal = input.split(".")[1]
-        input_whole = input.split(".")[0]
-        input_whole_seperate = input_whole.to_s.reverse.scan(/.{1,3}/).join(',').reverse
-        input_whole_seperate + "." + input_decimal
+        input_fractional = input.split(".")[1]
+        input_integral = input.split(".")[0]
+        input_whole_seperate = input_integral.to_s.reverse.scan(/.{1,3}/).join(',').reverse
+        input_whole_seperate + "." + input_fractional
     end
 
     def format_change(input)
-        input_array = input.to_s.split(//)
-        if input_array.include?("-")
+        if input.include?("-")
             input.colorize(:red)
         else
             "+".colorize(:green) + input.colorize(:green)
