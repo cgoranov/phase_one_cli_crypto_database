@@ -92,24 +92,40 @@ class CLI
     end
 
     def currency_deail(user_input)
-        CryptoCurrency.all.each do |x|
+        sorted_list = CryptoCurrency.all.sort {|a, b| a.rank <=> b.rank}
+        sorted_list.each do |x|
             if x.name == user_input
                 puts " "
                 puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
                 puts " "
                 puts "Rank:           #{x.rank}"
-                puts "Name:           #{x.name}"
+                puts "Name:           #{x.name.colorize(:light_blue)}"
                 puts "Ticker Symbol:  #{x.symbol}"
-                puts "Current Price:  #{x.price_usd}"
-                puts "Market Cap:     #{x.market_cap_usd}"
-                puts "24 hour change: #{x.percent_change_24h}"
-                puts "1 hour change:  #{x.percent_change_1h}"
-                puts "7 day change:   #{x.percent_change_7d}"
+                puts "Current Price:  #{format_number(x.price_usd)}"
+                puts "Market Cap:     #{format_number(x.market_cap_usd)}"
+                puts "24 hour change: #{format_change(x.percent_change_24h)}"
+                puts "1 hour change:  #{format_change(x.percent_change_1h)}"
+                puts "7 day change:   #{format_change(x.percent_change_7d)}"
                 puts " "
                 puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
                 puts " "
             end
         end
     end
+
+    # def format_number(input)
+    #     input_integer = input.to_i
+    #     input_integer.to_s.reverse.scan(/.{1,3}/).join(',').reverse
+    # end
+
+    # def format_change(input)
+    #     input_array = input.to_s.split(//)
+    #     if input_array.include?("-")
+    #         input.colorize(:red)
+    #     else
+    #         input.colorize(:green)
+    #     end
+    # end
+        
 
 end
