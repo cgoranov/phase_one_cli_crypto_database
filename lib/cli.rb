@@ -55,11 +55,11 @@ class CLI
     end
 
     def greeting
-        font = TTY::Font.new(:starwars)
-        pastel = Pastel.new
+        # font = TTY::Font.new(:starwars)
+        # pastel = Pastel.new
         puts " "
         puts "Welcome to" 
-        puts pastel.magenta(font.write("Crypto Search"))
+        puts PASTEL.magenta(FONT.write("Crypto Search"))
         puts " "
         puts "Would you like to see the top 5 largest cryptocurrencies in the world?"
         puts " "
