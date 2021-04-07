@@ -11,12 +11,10 @@ class CLI
         puts " "
         puts "Enter 'Yes' to see our list or 'Exit' to leave search"
         input = user_input
-        if valid_input?(input)
-            if input == "Yes"
-                search
-            else
-                goodbye
-            end
+        if input == "Yes"
+            search
+        elsif input == "Exit"
+            goodbye
         else
             invalid
             menu
