@@ -39,4 +39,4 @@ April 12th Week : We will be launching the beta of Crypto Sim, a trading simulat
 Crypto Currency detail but also trade it with fake simulated portfolio! :) Stay tuned!
 
 ## Authors and acknowledgment
-Crypto Search is a proud product by Che Goranov. 
+Crypto Search is a proud product from Che Goranov. 
