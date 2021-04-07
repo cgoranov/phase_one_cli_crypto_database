@@ -42,7 +42,7 @@ class CLI
 
     def another_selection?
         puts " "
-        puts "would you like to search other currencies? Select 'Yes' or 'Exit' (input is CASE SENSITIVE)"
+        puts "would you like to search other currencies? Select 'Yes' or 'Exit'"
         input = user_input.downcase
         if input == "yes"
             search
