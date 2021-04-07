@@ -110,8 +110,10 @@ class CLI
     end
 
     def format_number(input)
-        input_integer = input.to_i
-        input_integer.to_s.reverse.scan(/.{1,3}/).join(',').reverse
+        input_decimal = input.split(".")[1]
+        input_whole = input.split(".")[0]
+        input_whole_seperate = input_whole.to_s.reverse.scan(/.{1,3}/).join(',').reverse
+        input_whole_seperate + "." + input_decimal
     end
 
     def format_change(input)
