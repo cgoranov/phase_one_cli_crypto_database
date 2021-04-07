@@ -18,6 +18,15 @@ ruby bin/run_crypto
 
 ## Usage
 
+Once you run the application you simply need to follow the prompts and input the actions you woud like to take! 
+
+```ruby
+puts " "
+        crypto_currency_list
+        puts " "
+        puts "Please enter name of the currency you would like to see more detail about. WARNING: case sensitive!"
+        puts "You can type 'Exit' to exit application."
+```
 
 
 ## Contributing
