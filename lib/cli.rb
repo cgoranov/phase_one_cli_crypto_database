@@ -27,8 +27,8 @@ class CLI
         puts " "
         crypto_currency_list
         puts " "
-        puts "Please enter name of the currency you would like to see more detail about. WARNING: yes case sensitive!"
-        puts "You can type 'Exit' to exit application"
+        puts "Please enter name of the currency you would like to see more detail about. WARNING: case sensitive!"
+        puts "You can type 'Exit' to exit application."
         input = user_input
         if valid_input?(input)
             if input == "Exit"
@@ -46,7 +46,7 @@ class CLI
 
     def another_selection?
         puts " "
-        puts "would you like to search other currencies? Select Yes or Exit (input is CASE SENSITIVE)"
+        puts "would you like to search other currencies? Select 'Yes' or 'Exit' (input is CASE SENSITIVE)"
         input = user_input
         if input == "Yes"
             search
