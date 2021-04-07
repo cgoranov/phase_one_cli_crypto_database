@@ -56,7 +56,8 @@ class CLI
 
     def greeting
         puts " "
-        puts "Welcome to Crypto Search!"
+        puts "Welcome to" " " "Crypto Search!".colorize(:color => :light_blue)
+        puts " "
         puts "Would you like to see the top 5 largest cryptocurrencies in the world?"
         puts " "
     end
