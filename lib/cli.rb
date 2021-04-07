@@ -2,18 +2,18 @@
 class CLI
 
     def initialize
-        greeting
         GetCryptoCurrency.get_currency
+        greeting
         menu
     end
 
     def menu
         puts " "
         puts "Enter 'Yes' to see our list or 'Exit' to leave search"
-        input = user_input
-        if input == "Yes"
+        input = user_input.downcase
+        if input == "yes"
             search
-        elsif input == "Exit"
+        elsif input == "exit"
             goodbye
         else
             invalid
@@ -25,13 +25,13 @@ class CLI
         puts " "
         crypto_currency_list
         puts " "
-        puts "Please enter name of the currency you would like to see more detail about. WARNING: case sensitive!"
+        puts "Please enter name of the currency you would like to see more detail about."
         puts "You can type 'Exit' to exit application."
-        input = user_input
-        if input == "Exit"
+        input = user_input.downcase
+        if input == "exit"
             goodbye
-        elsif CryptoCurrency.all.any? {|x| x.name == input}
-            currency_deail(input)
+        elsif CryptoCurrency.all.any? {|x| x.name.downcase == input}
+            currency_detail(input)
             puts " "
             another_selection?
         else
@@ -43,10 +43,10 @@ class CLI
     def another_selection?
         puts " "
         puts "would you like to search other currencies? Select 'Yes' or 'Exit' (input is CASE SENSITIVE)"
-        input = user_input
-        if input == "Yes"
+        input = user_input.downcase
+        if input == "yes"
             search
-        elsif input == "Exit"
+        elsif input == "exit"
             goodbye
         else
             invalid
@@ -55,8 +55,6 @@ class CLI
     end
 
     def greeting
-        # font = TTY::Font.new(:starwars)
-        # pastel = Pastel.new
         puts " "
         puts "Welcome to" 
         puts PASTEL.magenta(FONT.write("Crypto Search"))
@@ -82,15 +80,15 @@ class CLI
     end
 
     def crypto_currency_list
-        CryptoCurrency.all.collect do |x|
+        CryptoCurrency.all.each do |x|
             puts "#{x.rank}. #{x.name}" if x.rank <= 5
         end
     end
 
-    def currency_deail(user_input)
+    def currency_detail(user_input)
         sorted_list = CryptoCurrency.all.sort {|a, b| a.rank <=> b.rank}
         sorted_list.each do |x|
-            if x.name == user_input
+            if x.name.downcase == user_input
                 puts " "
                 puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
                 puts " "
