@@ -21,12 +21,12 @@ ruby bin/run_crypto
 Once you run the application you simply need to follow the prompts and input the actions you woud like to take! 
 
 ```ruby
-puts " "
-        crypto_currency_list
-        puts " "
-        puts "Please enter name of the currency you would like to see more detail about. WARNING: case sensitive!"
-        puts "You can type 'Exit' to exit application."
+"Welcome to Crypto Search!"
+"Would you like to see the top 5 largest cryptocurrencies in the world?"
+"Enter 'Yes' to see our list or 'Exit' to leave search"
 ```
+
+From this greeting, it will take you to the a list of top five currencies and go from there! 
 
 
 ## Contributing
