@@ -118,14 +118,14 @@ class CLI
         input_integer.to_s.reverse.scan(/.{1,3}/).join(',').reverse
     end
 
-    # def format_change(input)
-    #     input_array = input.to_s.split(//)
-    #     if input_array.include?("-")
-    #         input.colorize(:red)
-    #     else
-    #         input.colorize(:green)
-    #     end
-    # end
+    def format_change(input)
+        input_array = input.to_s.split(//)
+        if input_array.include?("-")
+            input.colorize(:red)
+        else
+            input.colorize(:green)
+        end
+    end
         
 
 end
