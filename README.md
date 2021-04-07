@@ -29,9 +29,14 @@ Once you run the application you simply need to follow the prompts and input the
 From this greeting, it will take you to the a list of top five currencies and go from there! 
 
 
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+## Support
+We are always looking to hear any feedback! Submit any suggestions or concerns to cgoranov@gmail.com. 
 
-Please make sure to update tests as appropriate.
 
-## License
+## Roadmap
+
+April 12th Week : We will be launching the beta of Crypto Sim, a trading simulator were can you not only look up 
+Crypto Currency detail but also trade it with fake simulated portfolio! :) Stay tuned!
+
+## Authors and acknowledgment
+Crypto Search is a proud product by Che Goranov. 
