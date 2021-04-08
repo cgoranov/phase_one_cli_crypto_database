@@ -80,14 +80,14 @@ class CLI
     end
 
     def crypto_currency_list
-        CryptoCurrency.all.each do |x|
+        sorted_list = CryptoCurrency.all.sort {|a, b| a.rank <=> b.rank}
+        sorted_list.each do |x|
             puts "#{x.rank}. #{x.name}" if x.rank <= 5
         end
     end
 
     def currency_detail(user_input)
-        sorted_list = CryptoCurrency.all.sort {|a, b| a.rank <=> b.rank}
-        sorted_list.each do |x|
+        CryptoCurrency.all.each do |x|
             if x.name.downcase == user_input
                 puts " "
                 puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
