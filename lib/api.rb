@@ -10,6 +10,7 @@ class GetCryptoCurrency
         currency_array.each do |currency|
             CryptoCurrency.new(currency)
         end
+        
     end
 
 end

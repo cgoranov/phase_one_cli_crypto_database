@@ -1,4 +1,4 @@
-require 'bundler'
+require 'bundler/setup'
 Bundler.require
 
 FONT = TTY::Font.new(:starwars)
