@@ -107,10 +107,10 @@ class CLI
     end
 
     def format_number(input)
-        input_fractional = input.split(".")[1]
-        input_integral = input.split(".")[0]
-        input_whole_seperate = input_integral.to_s.reverse.scan(/.{1,3}/).join(',').reverse
-        input_whole_seperate + "." + input_fractional
+        fractional = input.split(".")[1]
+        integral = input.split(".")[0]
+        integral_with_commas = integral.to_s.reverse.scan(/.{1,3}/).join(',').reverse
+        integral_with_commas + "." + fractional
     end
 
     def format_change(input)
