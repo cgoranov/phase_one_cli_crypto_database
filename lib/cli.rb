@@ -2,8 +2,8 @@
 class CLI
 
     def initialize
-        GetCryptoCurrency.get_currency
         greeting
+        GetCryptoCurrency.get_currency
         menu
     end
 
@@ -102,7 +102,6 @@ class CLI
                 puts "1 hour change (%):    #{format_change(x.percent_change_1h)}"
                 puts " "
                 puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-                puts " "
             end
         end
     end
