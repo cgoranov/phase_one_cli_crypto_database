@@ -82,7 +82,7 @@ class CLI
     def crypto_currency_list
         sorted_list = CryptoCurrency.all.sort {|a, b| a.rank <=> b.rank}
         sorted_list[0..4].each do |x|
-            puts "#{x.rank}. #{x.name}" if x.rank <= 5
+            puts "#{x.rank}. #{x.name}" 
         end
     end
 
